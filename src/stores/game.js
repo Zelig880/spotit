@@ -2,6 +2,13 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import game from '../services/game'
 import { shuffleArray } from '../services/utils'
 
+const gameStatuses = {
+  SETUP: 'setup',
+  PLAYING: 'playing',
+  FINISHED: 'finished',
+  PAUSED: 'paused',
+}
+
 const initialState = {
   set: [],
   playerCardIndex: 0,
@@ -11,7 +18,8 @@ const initialState = {
   score: 0,
   symbolsPerCard: 8,
   timer: null,
-  countDownSecond: 100,
+  countDownSecond: 10,
+  gameStatus: gameStatuses.SETUP,
 }
 
 export const useGameStore = defineStore('game', {
@@ -32,7 +40,14 @@ export const useGameStore = defineStore('game', {
   actions: {
     initialize() {
       this.set = game(this.symbolsPerCard)
+      this.gameStatus = gameStatuses.PLAYING
+      if (this.timer) this.stopTimer()
       this.timer = setInterval(() => {
+        if (this.countDownSecond === 0) {
+          this.stopTimer()
+          this.gameStatus = gameStatuses.FINISHED
+          return
+        }
         this.countDownSecond -= 1
       }, 1000)
     },

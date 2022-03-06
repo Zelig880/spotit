@@ -4,6 +4,9 @@
   <button @click="gameStore.stopTimer">
     stop
   </button>
+  <button @click="gameStore.startTimer">
+    start
+  </button>
   Current Card
   <div class="card">
     <button v-for="(symbol, index) in gameStore.currentCard" :key="`current-${index}`" @click="gameStore.selectCard(symbol)">
@@ -47,16 +50,18 @@ export default {
 </script>
 <style lang="scss">
 .card {
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   button{
     flex:1;
     margin:3px;
     border-radius:5px;
     background-color: lightBlue;
     padding:5px;
-    width: 30px;
+    flex: 1 1 90px;
+    height: 55px;
     :hover{
       background-color: lightGreen;
     }

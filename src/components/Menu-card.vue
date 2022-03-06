@@ -2,7 +2,7 @@
   <router-link :to="to" :class="[styleClassName, 'menu-card']">
     <img :src="src" alt="">
     <div>
-      <div class="text-xxl">
+      <div class="text-xl">
         {{ text }}
       </div>
       {{ subText }}
@@ -31,15 +31,14 @@ const styleClassName = computed(() => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
-  min-height:300px;
+  max-width: 200px;
   border-radius: 25px;
-  padding: 50px 15px;
+  padding: 30px 15px;
 
   img{
     width: 75px;
     height: 75px;
-    margin: 0 auto;
+    margin: 0 auto 25px;;
   }
 }
 .style-0{

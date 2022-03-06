@@ -3,3 +3,9 @@
     <router-view />
   </main>
 </template>
+<style lang="scss">
+main {
+  background-image: url('/ui/bg-2.png');
+  height: 100%;
+}
+</style>
