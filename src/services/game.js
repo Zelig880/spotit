@@ -14,6 +14,8 @@
 // https://www.ryadel.com/en/dobble-spot-it-algorithm-math-function-javascript
 // -----------------------------------------------------------------------------
 //
+import { isPrime, shuffleArray } from './utils'
+
 function game(N) {
   const sTot = [] // array of series (cards)
 
@@ -47,21 +49,6 @@ function game(N) {
   }
 
   return shuffleArray(sTot)
-}
-
-function isPrime(num) {
-  for (let i = 2; i < num; i++)
-    if (num % i === 0) return false
-
-  return num > 1
-}
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]
-  }
-  return array
 }
 
 export default game

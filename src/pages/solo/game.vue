@@ -1,5 +1,9 @@
 <template>
   <h1>Solo Game</h1>
+  <div>{{ gameStore.formattedCountdown }}</div>
+  <button @click="gameStore.stopTimer">
+    stop
+  </button>
   Current Card
   <div class="card">
     <button v-for="(symbol, index) in gameStore.currentCard" :key="`current-${index}`" @click="gameStore.selectCard(symbol)">
@@ -41,24 +45,24 @@ export default {
 }
 
 </script>
-<style>
+<style lang="scss">
 .card {
   width: 600px;
   margin: 0 auto;
   display: flex;
-}
-.card button{
-  flex:1;
-  margin:3px;
-  border-radius:5px;
-  background-color: lightBlue;
-  padding:5px;
-  width: 30px;
-}
-.card button img{
-  margin: 0 auto;
-}
-.card button:hover{
-  background-color: lightGreen;
+  button{
+    flex:1;
+    margin:3px;
+    border-radius:5px;
+    background-color: lightBlue;
+    padding:5px;
+    width: 30px;
+    :hover{
+      background-color: lightGreen;
+    }
+  }
+  button img{
+    margin: 0 auto;
+  }
 }
 </style>

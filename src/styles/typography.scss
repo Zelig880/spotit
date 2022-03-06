@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "sassoon-regular";
+  src: url("/fonts/sassoon/Sassoon-Primary.otf");
+}
+@font-face {
+  font-family: "sassoon-medium";
+  src: url("/fonts/sassoon/SassoonSansSlopeStd-Medium.otf");
+}
+@font-face {
+  font-family: "sassoon-bold";
+  src: url("/fonts/sassoon/SassoonInfantStd-Bold.otf");
+}
+.text-xxl, .text.xl, .text-l{
+  font-family: sassoon-medium;
+}
+.text-xxl{
+  font-family: sassoon-bold;
+  font-size: 2em;
+  letter-spacing: 0.075em;
+}
+.text-xl{
+  font-size: 1.75em;
+  letter-spacing: 0.05em;
+}
+.text-l{
+  font-size: 1.25em;
+}

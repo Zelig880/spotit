@@ -1,5 +1,6 @@
 @import './markdown.css';
 @import './colors.scss';
+@import './typography.scss';
 
 html,
 body,
@@ -7,6 +8,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: sassoon-regular;
 }
 
 html.dark {
@@ -26,4 +28,14 @@ html.dark {
   left: 0;
   width: 100%;
   height: 2px;
+}
+
+.cta{
+  width: 100%;
+  background-color: $maximum-yellow-red;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  padding: 5px;
 }
